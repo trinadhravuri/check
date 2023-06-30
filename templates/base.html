@@ -18,13 +18,17 @@
             <ul>
                 <li><a href="">Home</a></li>
                 <li><a href="">About Me</a></li>
-                <li><a href="">All Skills</a></li>
+                <li><a href="{% url 'allskills' %}">All Skills</a></li>
                 <li><a href="">All Projects</a></li>
                 <li><a href="">Contact Me</a></li>
             </ul>
         </div>
     </section>
+    <br>
+    {% block content %}
+    {% endblock %}
     <!-- footer starts -->
+    <hr>
     <section class="footer">
         <div class="address">
             <ul>
