@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<section>
+    <div>
+        <h1>All Projects</h1>
+    </div>
+    <div>
+        <ul>
+            {% for project in projects %}
+            <li>
+                <img src="{{project.project_img.url}}" alt="">
+                <h1>{{project.project_name}}</h1>
+                <h4>{{project.project_quote}}</h4>
+                <h3>{{project.project_teamsize}}</h3>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endblock %}

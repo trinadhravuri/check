@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Skills
+from .models import Skills,Projects
 # Create your views here.
 
 def base(request):
@@ -11,3 +11,10 @@ def allskills(request):
         'skills':skills
     }
     return render(request,'allskills.html',context)
+
+def allprojects(request):
+    projects = Projects.objects.all()
+    context = {
+        'projects':projects
+    }
+    return render(request,'allprojects.html',context)
