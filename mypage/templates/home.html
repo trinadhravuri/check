@@ -15,8 +15,17 @@
     .title2 a{
         text-align: center;
         font-size: 60px;
-        padding-bottom: 130px;
+        margin-bottom: 130px;
         color: black;
+        text-decoration: none;
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+    .title2 a:active,
+    .title2 a:hover{
+        text-decoration: underline;
+        letter-spacing: 4px;
+        transition: 0.5s ease-out;
     }
     .skills ul{
         display: flex;
@@ -75,6 +84,15 @@
         font-size: 60px;
         padding-bottom: 130px;
         color: azure;
+        text-decoration: none;
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+    .title3 a:active,
+    .title3 a:hover{
+        text-decoration: underline;
+        letter-spacing: 4px;
+        transition: 0.5s ease-out;
     }
     .projects ul{
         display: flex;
@@ -96,7 +114,7 @@
     }
     .projects ul li:active,
     .projects ul li:hover{
-        box-shadow: 0 0 10px 6px grey;
+        box-shadow: 0 0 10px 6px white;
     }
     .projects ul li:active,
     .projects ul li:hover img{
@@ -124,6 +142,65 @@
             top: 100px;
         }
     }
+    /* intro */
+    .about{
+        background-color: black;
+        text-align: center;
+        justify-content: center;
+        color:azure;
+        margin: 10px;
+        padding: 10px;
+        line-height: 30px;
+        font-family: 'Lucida Sans',Verdana, sans-serif;
+        letter-spacing: 3px;
+    }
+    .about h2 span{
+        font-size: 35px;
+        text-shadow: 0 10px 5px rgba(62,64,64);
+    }
+    .about li{
+        list-style: none;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 30px;
+        margin-top: 20px;
+    }
+    .about li a{
+        color: azure;
+        text-decoration: none;
+    }
+    .about li a:active,
+    .about li a:hover{
+        text-decoration: underline;
+    }
+    .about .education{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        font-size: 25px;
+        text-align: center;
+        justify-content: space-around;
+    }
+    .about .education li{
+        height: 270px;
+        width: 270px;
+        box-shadow: 0  0 10px 3px rgba(62,64,64, 0.5);
+        margin: 10px;
+        padding: 10px;
+    }
+    .about .education li h1{
+        font-size: 25px;
+    }
+    .about .education li h2{
+        font-size: 20px;
+        font-family: cursive;
+        line-height: 20px;
+    }
+    .about .education li h3{
+        font-size: 20px;
+        font-family:'Gill Sans',sans-serif;
+        line-height: 20px;
+    }
 </style>
 <br>
     {% block intro %}
@@ -133,7 +210,7 @@
     <h2>Hi..Myself <span>Trinadh Ravuri</span></h2>
     <h2>I started my career in IT in 2016.</h2>
     <h2>I have worked in multiple domains:</h2>
-    <ul>
+    <ul class="links">
         <li><a href="">Python Development</a></li>
         <li><a href="">Automation Testing</a></li>
         <li><a href="">Manual Testing</a></li>
@@ -141,7 +218,7 @@
     </ul>
     <h2>I am very interested in Python Development</h2>
     <h2>My Education Details</h2>
-    <ul>
+    <ul class="education">
         <li>
             <h1>10Th</h1>
             <h2>Municipal High School</h2>
@@ -149,26 +226,26 @@
             <h2>Percent 83%</h2>
         </li>
         <li>
-            <h1>intermediate</h1>
+            <h1>Intermediate</h1>
             <h2>Sarada College</h2>
             <h3>Narasaraopet</h3>
             <h2>Percent 74%</h2>
         </li>
         <li>
-            <h1>Bachelor in Science(Electronics)</h1>
+            <h1>B Sc (Electronics)</h1>
             <h2>S S & N College</h2>
             <h3>Narasaraopet</h3>
             <h2>Percent 68%</h2>
         </li>
         <li>
-            <h1>Master in Computer Applications</h1>
+            <h1>Master in Computer Applications (M C A)</h1>
             <h2>Holy Mary</h2>
             <h3></h3>
             <h2>Percent 62%</h2>
         </li>
     </ul>
     <div class="social-links">
-        
+
     </div>
 </section>
 <section class="skills">
