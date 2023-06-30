@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .skills{
+        position: relative;
+        top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: space-around;
+        
+    }
+    .title2 a{
+        text-align: center;
+        font-size: 60px;
+        padding-bottom: 130px;
+        color: black;
+    }
+    .skills ul{
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .skills ul li{
+        list-style: none;
+        margin: 20px;
+        padding: 20px;
+        height: 450px;
+        width: 300px;
+    }
+    .skills ul li img{
+        height: 300px;
+        width: 300px;   
+    }
+    .skills ul li a{
+        text-decoration: none;
+        color: black;
+    }
+    .skills ul li:active,
+    .skills ul li:hover{
+        box-shadow: 0 0 10px 6px grey;
+    }
+    .skills ul li:active,
+    .skills ul li:hover img{
+        filter: invert(100%);
+        border: 1px solid black;
+    }
+    .skills ul li:active,
+    .skills ul li:hover .skillname{
+        font-size: 25px;
+        text-decoration: underline;
+    }
+    .quote{
+        font-family: cursive;
+        padding-top: 20px;
+        font-size: 15px;
+        color: black;
+    }
+    /* projects */
+    .projects{
+        position: relative;
+        top: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: space-around;
+        background-color: black;
+    }
+    .title3 a{
+        text-align: center;
+        font-size: 60px;
+        padding-bottom: 130px;
+        color: azure;
+    }
+    .projects ul{
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .projects ul li{
+        list-style: none;
+        margin: 20px;
+        padding: 20px;
+        height: 200px;
+        width: 230px;
+    }
+    .projects ul li a{
+        text-decoration: none;
+        color: azure;
+    }
+    .projects ul li:active,
+    .projects ul li:hover{
+        box-shadow: 0 0 10px 6px grey;
+    }
+    .projects ul li:active,
+    .projects ul li:hover img{
+        filter: invert(100%);
+        border: 1px solid azure;
+    }
+    .projects ul li:active,
+    .projects ul li:hover .projectname{
+        font-size: 25px;
+        text-decoration: underline;
+    }
+    .quote{
+        font-family: cursive;
+        padding-top: 20px;
+        font-size: 15px;
+        color: azure;
+    }
+    @media(max-width:600px){
+        .skills{
+            position: relative;
+            top: 100px;
+        }
+        .projects{
+            position: relative;
+            top: 100px;
+        }
+    }
+</style>
+<br>
+    {% block intro %}
+    {% include 'intro.html' %}
+    {% endblock intro %}
+<section class="skills">
+    <h1 class="title2" title="Click Here for ALL SKILLS"><a href="{% url 'allskills' %}">My SKILLS</a></h1>
+    <div>
+        <ul>
+            {% for skill in skills %}
+            <li>
+            <a href=""><img src="{{skill.skill_img.url}}" alt=""></a>
+            <h1 class="skillname"><a href="">{{skill.skill_name}}</a></h1>
+            <h2 class="quote">{{skill.skill_quote}}</h2>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+<section class="projects">
+    <h1 class="title3" title="Click Here for ALL PROJECTS"><a href="{% url 'allprojects' %}">My PROJECTSS</a></h1>
+    <div>
+        <ul>
+            {% for project in projects %}
+            <li>
+            <!--<a href=""><img src="{{project.project_img.url}}" alt=""></a>-->
+            <h1 class="projectname"><a href="">{{project.project_name}}</a></h1>
+            <h2 class="quote">{{project.Project_quote}}</h2>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endblock content %}

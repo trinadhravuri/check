@@ -8,6 +8,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trinadh Ravuri</title>
 </head>
+<style>
+    *{
+        transition: all 0.2s ease;
+        scroll-behavior: smooth;
+    }
+    .header{
+        position: fixed;
+        top: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: center;
+        justify-content: space-around;
+        background-color: white;
+        z-index: 9;
+    }
+    .name-logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .name-logo img{
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        margin-right: 30px;
+    }
+    .name-logo h1{
+        letter-spacing: 3px;
+        font-family: 'Lucida Sans',  sans-serif;
+    }
+    .name-logo h1 span{
+        font-size: 40px;
+        font-family: Verdana, sans-serif;
+    }
+    .nav ul{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .nav ul li{
+        list-style: none;
+        font-family:'Lucida Sans', Verdana, sans-serif ;
+        font-size: 18px;
+        letter-spacing: 3px;
+        margin: 10px;
+        padding: 10px;
+    }
+    .nav ul li a{
+        text-decoration: none;
+        margin: 10px;
+        padding: 10px;
+        color: black;
+    }
+    .nav ul li:active,
+    .nav ul li:hover{
+        border: 1px solid black;
+    }
+    @media(max-width:600px){
+        .nav ul{
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+        }
+        .nav ul li{
+            margin: 0;
+            padding: 0;            
+        }
+    }
+</style>
 <body>
     <section class="header">
         <div class="name-logo">
@@ -16,7 +88,7 @@
         </div>
         <div class="nav">
             <ul>
-                <li><a href="{% url  'base' %}">Home</a></li>
+                <li><a href="{% url  'home' %}">Home</a></li>
                 <li><a href="">About Me</a></li>
                 <li><a href="{% url 'allskills' %}">All Skills</a></li>
                 <li><a href="{% url 'allprojects' %}">All Projects</a></li>
@@ -26,9 +98,9 @@
     </section>
     <br>
     {% block content %}
+
     {% endblock %}
     <!-- footer starts -->
-    <hr>
     <section class="footer">
         <div class="address">
             <ul>
