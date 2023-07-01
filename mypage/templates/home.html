@@ -201,6 +201,18 @@
         font-family:'Gill Sans',sans-serif;
         line-height: 20px;
     }
+    @media (max-width: 700px){
+        .about{
+            position: relative;
+            top: 80px;
+        }
+        .title2 a{
+            font-size: 32px;
+        }
+        .title3 a{
+            font-size: 23px;
+        }
+    }
 </style>
 <br>
     {% block intro %}
@@ -254,7 +266,7 @@
         <ul>
             {% for skill in skills %}
             <li>
-            <a href=""><img src="{{skill.skill_img.url}}" alt=""></a>
+            <a href="{% url 'singleskill' skill.id %}"><img src="{{skill.skill_img.url}}" alt=""></a>
             <h1 class="skillname"><a href="">{{skill.skill_name}}</a></h1>
             <h2 class="quote">{{skill.skill_quote}}</h2>
             </li>

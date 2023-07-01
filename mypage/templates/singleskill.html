@@ -1,0 +1,78 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    .singleskill{
+        position: relative;
+        top: 150px;
+    }
+    .singleskill img{
+        height: 400px;
+        width: 400px;
+    }
+    .singleskill img:active,
+    .singleskill img:hover{
+        filter: invert(100%);
+    }
+    .skillhead{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .skillname{
+        font-size: 90px;
+    }
+    .searches{
+        margin-top: 30px;
+        text-align: center;
+        justify-content: space-around;
+    }
+    .searches ul{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    .font-icon{
+        list-style: none;
+        font-size: 50px;
+        padding: 10px;
+        margin: 10px;
+    }
+    .font-icon a{
+        color: black;
+    }
+    .font-icon:active,
+    .font-icon:hover a{
+        color: rgb(8, 101, 158);
+        transition: all 0.2s ease-in;
+    }
+    @media(max-width:600px){
+        .skillhead{
+            display: flex;
+            flex-direction: column;
+            margin: 5px;
+            padding: 5px;
+        }
+        .nav ul li{
+            margin: 0;
+            padding: 0;            
+        }
+    }
+</style>
+<section class="singleskill">
+    <div class="skillhead">
+        <img src="{{skill.skill_img.url}}" alt="">
+        <h1 class="skillname">{{skill.skill_name|upper}}</h1>
+    </div>
+    <div class="searches">
+        <ul>
+            <li class="font-icon"><a href="https://www.wikipedia.org/"><i class="fa-brands fa-wikipedia-w"></i></a></li>
+            <li class="font-icon"><a href="https://www.google.com/"><i class="fa-brands fa-google"></i></a></li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

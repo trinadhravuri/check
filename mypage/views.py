@@ -29,3 +29,10 @@ def allprojects(request):
         'projects':projects
     }
     return render(request,'allprojects.html',context)
+
+def singleskill(request,pk):
+    skill = Skills.objects.get(pk = pk)
+    context = {
+        'skill':skill
+    }
+    return render(request,'singleskill.html',context)

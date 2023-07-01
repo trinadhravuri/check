@@ -6,4 +6,5 @@ urlpatterns = [
     path('allskills',views.allskills,name='allskills'),
     path('allprojects',views.allprojects,name='allprojects'),
     path('home',views.home,name='home'),
+    path('<int:pk>',views.singleskill,name='singleskill'),
 ]
