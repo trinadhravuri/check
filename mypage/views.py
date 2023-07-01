@@ -36,3 +36,9 @@ def singleskill(request,pk):
         'skill':skill
     }
     return render(request,'singleskill.html',context)
+
+def singleproject(request,pk):
+    project = Projects.objects.get(pk=pk)
+    skills = project.project_skills.all()
+    context = {'project':project,'skills':skills}
+    return render(request,'singleproject.html',context)

@@ -68,8 +68,8 @@
         <ul>
             {% for project in projects %}
             <li>
-                <h1 class="projectname"><a href="">{{project.project_name}}</a></h1>
-                <h4 class="projectqoute"><a href="">{{project.Project_quote}}</a></h4>
+                <h1 class="projectname"><a href="{% url 'singleproject' project.id %}">{{project.project_name}}</a></h1>
+                <h4 class="projectqoute"><a href="{% url 'singleproject' project.id %}">{{project.Project_quote}}</a></h4>
                 <h3>Team - size : {{project.project_teamsize}}</h3>
             </li>
             {% endfor %}

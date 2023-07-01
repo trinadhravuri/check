@@ -281,7 +281,7 @@
             {% for project in projects %}
             <li>
             <!--<a href=""><img src="{{project.project_img.url}}" alt=""></a>-->
-            <h1 class="projectname"><a href="">{{project.project_name}}</a></h1>
+            <h1 class="projectname"><a href="{% url 'singleproject' project.id %}">{{project.project_name}}</a></h1>
             <h2 class="quote">{{project.Project_quote}}</h2>
             </li>
             {% endfor %}
