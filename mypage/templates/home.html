@@ -213,6 +213,59 @@
             font-size: 23px;
         }
     }
+    .form-control{
+            position: relative;
+            top: 50px;
+            text-align: center;
+            margin: 10px;
+            padding: 10px;
+            padding-left: 20px;
+            font-size: 20px;
+        }
+        .form-control .heading{
+            position: relative;
+            top: 60px;
+            padding: 10px;
+            margin: 10px;
+        }
+    .bttn{
+            position: relative;
+            top: 60px;
+            margin: 10px;
+            padding: 10px;
+            width: 250px;
+            height: 60px;
+            background: white;
+            border-radius: 5px;
+            font-size: 20px;
+            border: 0.2px solid rgba(0,0,0,0.3);
+            z-index: 99;
+        }
+        .bttn:active,
+        .bttn:hover{
+            background: rgba(0,0,0,0.3);
+            color: white;
+            border: none;
+        }
+        .social-links ul{
+            display: flex;
+            flex-wrap: nowrap;
+            text-align: center;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .social-links ul li{
+            margin: 20px;
+            padding: 20px;
+        }
+        .social-links ul li a{
+            font-size: 40px;
+        }
+        .social-links ul li a:active,
+        .social-links ul li a:hover{
+            color: rgb(8, 101, 158);
+            transition: all 0.2s ease;
+        }
 </style>
 <br>
     {% block intro %}
@@ -257,7 +310,12 @@
         </li>
     </ul>
     <div class="social-links">
-
+            <ul>
+                <li><a href="https://www.facebook.com/trinadh.acharya.5/"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/trinadhachary"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/ravuri-achari-95b98b1a/"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/trinadhravuri"><i class="fa-brands fa-github"></i></a></li>
+            </ul>
     </div>
 </section>
 <section class="skills">
@@ -288,4 +346,19 @@
         </ul>
     </div>
 </section>
+<br>
+<section class="form-control">
+    <h1 class="heading">Please Message me</h1>
+    <form method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="field-tag">
+        {{field}}
+    </div>
+    {% endfor %}
+    <button type="submit" class="bttn">SEND</button>
+</form>
+</section>
+<br>
+
 {% endblock content %}

@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Skills,Projects
+from .forms import EnquiryForm
+from django.contrib import messages
 # Create your views here.
 
 def base(request):
@@ -10,11 +12,20 @@ def home(request):
     skills = skills[:4]
     projects = Projects.objects.all()
     projects = projects[:4]
-    context = {
+    form = EnquiryForm
+    if request.method == 'POST':
+        form = EnquiryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Enquiry submitted successfully.Thank You.')
+            return redirect('enqsuc')
+    context ={
+        'form':form,
         'skills':skills,
         'projects':projects
     }
     return render(request,'home.html',context)
+   
 
 def allskills(request):
     skills = Skills.objects.all()
@@ -42,3 +53,19 @@ def singleproject(request,pk):
     skills = project.project_skills.all()
     context = {'project':project,'skills':skills}
     return render(request,'singleproject.html',context)
+
+def contactme(request):
+    form = EnquiryForm
+    if request.method == 'POST':
+        form = EnquiryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Enquiry submitted successfully.Thank You.')
+            return redirect('enqsuc')
+    context ={
+        'form':form
+    }
+    return render(request,'contactme.html',context)
+
+def enqsuccess(request):
+    return render(request,'enquirysuccess.html')

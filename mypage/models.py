@@ -26,4 +26,16 @@ class Projects(models.Model):
     
     class Meta:
         verbose_name_plural = 'Projects'
-        
+
+class Enquiry(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
+    contact= models.BigIntegerField()
+    message = models.CharField(max_length=1000)
+    content = models.TextField(max_length=100000)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'Enquiries'
