@@ -72,6 +72,38 @@
     .single-project-skills ul li:hover a{
         letter-spacing: 2px;
     }
+    @media (max-width: 700px){
+        .singleproject-head img{
+            position: relative;
+            top: 80px;
+            height: 500px;
+            width: 500px;
+        }
+        .singleproject-head .name{
+            position: relative;
+            top: 100px;
+            font-size: 40px;
+        }
+        .team{
+            position: relative;
+            top: 100px;
+        }
+        .roles{
+            position: relative;
+            top: 100px;
+        }
+        .single-project-skills{
+            position: relative;
+            top: 100px;
+            margin: 5px;
+            padding: 5px;
+        }
+        .single-project-skills ul li a{
+            margin: 5px;
+            padding: 5px;
+            font-size: 20px;
+        }
+    }
 </style>
 <section class="singleproject">
     <div class="singleproject-head">
@@ -91,4 +123,6 @@
         </ul>
     </div>
 </section>
+<br>
+<br>
 {% endblock %}

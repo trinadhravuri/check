@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<style>
+.py-dev{
+    position: relative;
+    top: 150px;
+    padding: 10px;
+    margin: 10px;
+}
+.pydev--title{
+    text-align: center;
+    font-size: 50px;
+    text-decoration: underline;
+}
+.content{
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    line-height: 30px;
+    letter-spacing: 4px;
+    font-size: 20px;
+}
+</style>
+<section class="py-dev">
+    <h1 class="pydev--title">Python Development</h1>
+    <div class="content">
+        <h1 class="pydev-hello">Hello..</h1>
+        <p>I have been taking trainings and working simultaniously on Python Development.</p>
+        <h2>Which includes WEB DEVELOPMENT, Desktop applications Development and some Desktop Automation. </h2>
+        <h1>Web Development:</h1>
+        <h3>In the web development I mainly focused on Backend development using <a href="">Django</a> and <a href="">REST frameworks</a></h3>
+        <h3>In this Web Development i have worked with databases like <a href="">SQlite</a> and <a href="">MySQL</a></h3>
+        <h3>I also worked in Full stack Development, which the Frontend Includes: <a href="">HTML 5</a>,<a href="">C S S</a> and some <a href="">JavaScript</a></h3>
+        <h1>Desktop Applications:</h1>
+        <h3>In Desktop applications I personally done some mini or small projects like <a href="https://github.com/trinadhravuri/windows-phonebook">Windows Phonebook</a>,<a href="">Windows Notepad</a> etc..</h3>
+        <h3>You can go through the git projects linked to them..thanks</h3>
+        <h3>In Desktop Applications I worked with Python, Tkinter for the frontend and SQLite for the database.</h3>
+    </div>
+</section>
+{% endblock %}

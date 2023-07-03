@@ -69,3 +69,6 @@ def contactme(request):
 
 def enqsuccess(request):
     return render(request,'enquirysuccess.html')
+
+def python_dev(request):
+    return render(request,'python-development.html')

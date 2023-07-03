@@ -10,4 +10,5 @@ urlpatterns = [
     path('<int:pk>',views.singleskill,name='singleskill'),
     path('contactme',views.contactme,name='contactme'),
     path('enqsuc',views.enqsuccess,name='enqsuc'),
+    path('python-dev',views.python_dev,name='python-dev'),
 ]
