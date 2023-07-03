@@ -102,6 +102,27 @@
         padding-left: 20px;
         color: rgb(8, 101, 158);
     }
+    .social-link ul{
+            display: flex;
+            flex-wrap: nowrap;
+            text-align: center;
+            justify-content: center;
+            margin-top: 30px;
+    }
+    .social-link ul li{
+            margin: 20px;
+            padding: 20px;
+            list-style: none;
+    }
+    .social-link ul li a{
+            font-size: 40px;
+            color: black;
+    }
+    .social-link ul li a:active,
+    .social-link ul li a:hover{
+            color: rgb(8, 101, 158);
+            transition: all 0.2s ease;
+    }
 </style>
 <body>
     <section class="header">
@@ -112,7 +133,7 @@
         <div class="nav">
             <ul>
                 <li><a href="{% url  'home' %}">Home</a></li>
-                <li><a href="">About Me</a></li>
+                <li><a href="#about">About Me</a></li>
                 <li><a href="{% url 'allskills' %}">All Skills</a></li>
                 <li><a href="{% url 'allprojects' %}">All Projects</a></li>
                 <li><a href="{% url 'contactme' %}">Contact Me</a></li>
@@ -138,6 +159,14 @@
             <h1>Contact</h1>
             <h3 class="call"><a href="tel:+917658962143">call me <i class="fa-solid fa-phone"></i></a></h3>
             <h3 class="mail"><a href="mailto:trinadh.ravz@gmail.com">call me <i class="fa-solid fa-envelope"></i></a></h3>
+        </div>
+        <div class="social-link">
+            <ul>
+                <li><a href="https://www.facebook.com/trinadh.acharya.5/"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/trinadhachary"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/ravuri-achari-95b98b1a/"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/trinadhravuri"><i class="fa-brands fa-github"></i></a></li>
+            </ul>
         </div>
     </section>
     <!-- footer ends -->

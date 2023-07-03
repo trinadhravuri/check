@@ -39,3 +39,6 @@ class Enquiry(models.Model):
 
     class Meta:
         verbose_name_plural = 'Enquiries'
+
+class downloadcv(models.Model):
+    file = models.FileField(upload_to='files',null=True)
