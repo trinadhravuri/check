@@ -17,7 +17,7 @@ def home(request):
         form = EnquiryForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request,'Enquiry submitted successfully.Thank You.')
+            messages.success(request,'Enquiry submitted successfully.Thank You.I will reply or contact you soon..Good Day.')
             return redirect('enqsuc')
     context ={
         'form':form,
@@ -60,7 +60,7 @@ def contactme(request):
         form = EnquiryForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request,'Enquiry submitted successfully.Thank You.')
+            messages.success(request,'Enquiry submitted successfully.Thank You.I will reply or contact you soon..Good Day.')
             return redirect('enqsuc')
     context ={
         'form':form

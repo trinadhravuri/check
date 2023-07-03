@@ -279,9 +279,9 @@
     <h2>I have worked in multiple domains:</h2>
     <ul class="links">
         <li><a href="{% url 'python-dev' %}">Python Development</a></li>
-        <li><a href="">Automation Testing</a></li>
-        <li><a href="">Manual Testing</a></li>
-        <li><a href="">System Adminstration</a></li>
+        <li><a href="{% url 'allprojects' %}">Automation Testing</a></li>
+        <li><a href="{% url 'allprojects' %}">Manual Testing</a></li>
+        <li><a href="{% url 'allprojects' %}">System Adminstration</a></li>
     </ul>
     <h2>I am very interested in Python Development</h2>
     <h2>My Education Details</h2>
@@ -350,7 +350,7 @@
 </section>
 <br>
 <section class="form-control">
-    <h1 class="heading">Please Message me</h1>
+    <h1 class="heading">Please Leave a Message,I will be very Responsive..</h1>
     <form method="POST">
     {% csrf_token %}
     {% for field in form %}
