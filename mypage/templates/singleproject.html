@@ -3,15 +3,90 @@
 
 
 {% block content %}
-<section>
-    <div>
+<style>
+    .singleproject{
+        position: relative;
+        top: 180px;
+        margin: 10px;
+        padding: 10px;
+    }
+    .singleproject-head{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .singleproject-head img{
+        box-shadow: 0 0 15px 5px rgba(0,0,0,0.5);
+    }
+    .singleproject-head .name{
+        font-size: 80px;
+        text-shadow: 0 15px 5px rgba(0,0,0,0.5);
+    }
+    .team{
+        font-size: 40px;
+    }
+    .team span{
+        color: crimson;
+    }
+    .roles{
+        text-align: center;
+        line-height: 30px;
+    }
+    .roles h2{
+        font-size: 45px;
+        text-decoration: underline;
+    }
+    .roles h3{
+        white-space:pre-line;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        letter-spacing: 3px;
+        font-weight: lighter;
+    }
+    .single-project-skills ul{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin: 20px;
+        padding: 20px;
+    }
+    .single-project-skills ul li{
+        margin: 20px;
+        padding: 20px;
+        list-style: none;
+    }
+    .single-project-skills ul li a{
+        margin: 20px;
+        padding: 20px;
+        text-decoration: none;
+        font-size: 30px;
+        color:black
+    }
+    .single-project-skills ul li:active,
+    .single-project-skills ul li:hover{
+        box-shadow: 0 0 15px 5px rgba(0,0,0,0.5);
+    }
+    .single-project-skills ul li:active,
+    .single-project-skills ul li:hover a{
+        letter-spacing: 2px;
+    }
+</style>
+<section class="singleproject">
+    <div class="singleproject-head">
         <img src="{{project.project_img.url}}" alt="">
-        <h1>{{project.project_name}}</h1>
+        <h1 class="name">{{project.project_name}}</h1>
     </div>
-    <div>
+    <h3 class="team">Team Size : <span>{{project.project_teamsize}}</span></h3>
+    <div class="roles">
+        <h2>Roles and Responcibilities:</h2>
+        <h3>{{project.project_roles}}</h3>
+    </div>
+    <div class="single-project-skills">
         <ul>
             {% for skill in skills %}
-            <li><a href="">{{skill}}</a></li>
+            <li><a href="{% url 'singleskill' skill.id %}">{{skill}}</a></li>
             {% endfor %}
         </ul>
     </div>
